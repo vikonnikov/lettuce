@@ -1,27 +1,26 @@
 .. _tutorial-simple:
 
-############
-introduction
-############
+########
+Введение
+########
 
-Lettuce_ is an extremely useful and charming tool for BDD_ (Behavior
-Driven Development). It can execute plain-text functional descriptions
-as automated tests for Python_ projects, just as Cucumber_ does for
-Ruby_.
+Lettuce_ это очень простой и изящный инструмент для BDD_ (Behavior
+Driven Development / Разработка, основанная на функционировании).
+Он позволяет интерпретировать привычные для человека текстовые инструкции
+по тестированию определенного функционала и затем выполнять их как автоматические
+тесты для Python_ проектов, точно так же как Cucumber_ делает это для Ruby_.
 
-Lettuce_ makes the development and testing process really easy,
-scalable, readable and - what is best - it allows someone who doesn't
-program to describe the behavior of a certain system, without
-imagining those descriptions will automatically test the system during
-its development.
+Lettuce_ делает процесс разработки и тестирования по настоящему простым,
+масштабируемым и понятным. Он позволяет человеку, не знакомому с внутренним устройством системы,
+успешно тестировать её в процессе разработки.
 
 .. image:: ./flow.png
 
-***********
-get lettuce
-***********
+*********
+Установка
+*********
 
-Make sure you've got Python installed and then run from the terminal:
+Убедившись что у вас уже установлен Python, выполните в терминале команду:
 
 .. highlight:: bash
 
