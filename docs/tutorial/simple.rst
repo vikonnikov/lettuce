@@ -136,10 +136,10 @@ Python:
 
 **Обратите внимание, что мы еще не реализовали функцию вычисления факториала (пока что она просто возвращает -1).**
 
-[c] run and watch it fail
--------------------------
+[c] Запуcтим и увидим упавший тест
+----------------------------------
 
-Go to the tests directory and run from the terminal:
+Перейдите в директорию с тестами и в терминале выполните следующую команду:
 
 .. highlight:: bash
 
@@ -147,19 +147,19 @@ Go to the tests directory and run from the terminal:
 
    user@machine:~/projects/mymath/tests$ lettuce
 
-As you haven't implemented factorial, it is no surprise the behavior
-won't be reached:
+Ничего удивительного в том что наш тест упал нет, мы ведь еще не описали функцию
+вычисления факториала и возвращаемое значение -1 не соответствует ожидаемому. 
 
 .. image:: ./screenshot1.png
 
-Our only scenario failed :(
-Let's solve it...
+Давайте попробуем исправить...
 
-[d] write code to make it pass
-------------------------------
+[d] Немного поправим код
+------------------------
 
-Well, by definition, we know that the factorial of 0 is 1. As our only
-feature is this... we could force factorial to return 1.
+Итак, по определению факториал 0 равен 1.
+В нашем тесте другие значения пока не задаются.
+Пусть теперь функция факториала возвращает 1.  
 
 .. highlight:: python
 
@@ -184,10 +184,10 @@ feature is this... we could force factorial to return 1.
     def factorial(number):
         return 1
 
-[e] run again and watch it pass
--------------------------------
+[e] Запуcтим и увидим что тест прошел
+-------------------------------------
 
-Again, run from the terminal:
+Снова выполним в терминале команду:
 
 .. highlight:: bash
 
@@ -195,25 +195,28 @@ Again, run from the terminal:
 
    user@machine:~/projects/mymath/tests$ lettuce
 
-And you'll be happy to see your factorial implementation passed all the behaviours expected:
+
+Как мы можем увидеть теперь реализация функции вычисления факториала ведет себя так как мы и ожидали:
 
 .. image:: ./screenshot2.png
 
-Great! :)
+Великолепно! :)
 
-However, one test is not enough for checking the quality of our
-solution... So let's lettuce it again!
+Однако функция вычисления факториала работает для одного значения и вычисляет
+только факториал 0, для решения поставленной задачи этого не достаточно.
+Давайте "посалатим" снова.
 
-second round
-============
+Второй этап
+===========
 
-Let's provide more tests so our problem is better described, and so we
-provide a more accurate implementation of factorial:
+Для более точной реализации задачи вычисления факториала, нам необходимо
+на необходимо протестировать функцию на большем диапазоне чисел,
+а следовательно нам необходимо больше тестов.
 
-[a] describe behaviour
-----------------------
+[a] Опишем поведение
+--------------------
 
-Let's provide two new scenarios, for numbers 1 and 2:
+Давайте добавим еще 2 сценария для чисел 1 и 2:
 
 .. highlight:: ruby
 
@@ -239,11 +242,10 @@ Let's provide two new scenarios, for numbers 1 and 2:
         When I compute its factorial
         Then I see the number 2
 
-[b] define steps in python
---------------------------
+[b] Описание шагов на Python-е
+------------------------------
 
-As we haven't changed the definition, no need to make changes on this
-step.
+Поскольку шаги у нас идентичные, в коде мы ничего менять не будем.
 
 [c] run and watch it fail
 -------------------------
