@@ -44,7 +44,8 @@ Lettuce_ делает процесс разработки и тестирова�
 project structure
 *****************
 
-Build the directory tree bellow such as the files ``zero.feature`` and ``steps.py`` are empty.
+Создайте директории в соответствии с приведенной ниже структурой, файлы 
+``zero.feature`` и ``steps.py`` пока оставьте пустыми.
 
 .. highlight:: bash
 
@@ -56,20 +57,21 @@ Build the directory tree bellow such as the files ``zero.feature`` and ``steps.p
                     - zero.feature
                     - steps.py
 
-***********
-lettuce it!
-***********
+************
+Посалатим :) 
+************
 
-Lets begin to describe and solve our problem...
+Давайте опишем и решим поставленную задачу...
 
-first round
+Первый этап
 ===========
 
+[a] Описываем поведение
+-----------------------
 
-[a] describe behaviour
-----------------------
-
-Start describing the expected behaviour of factorial in ``zero.feature`` using English:
+Начнем описывать ожидамое поведение программы вычисления факторила.
+Описание помещаем в файл ``zero.feature``. Поведение описывается на Английском,
+позже будет описана процедура локализации и использования русского языка в тестовых сценариях.
 
 .. highlight:: ruby
 
@@ -87,8 +89,8 @@ Start describing the expected behaviour of factorial in ``zero.feature`` using E
 
 .. Note::
 
-    zero.feature must be inside features directory and its extension must
-    be .feature. However, you're free to choose its name.
+	Файл ``zero.feature`` должен существовать, располагаться в директории ``features``
+	и иметь расширение ``.feature``. Имя файла может быть любым.
 
 [b] define steps in python
 --------------------------
