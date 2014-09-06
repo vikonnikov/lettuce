@@ -426,13 +426,12 @@ Python:
 
 Доступно с версии 0.2.19
 
-Steps sentence can now be given by function name or doc.
-=========================================================
+Регулярное выражение для шага
+=============================
 
-To take a step sentence from function name or doc,
-just decorate it with "@step" without argument.
-
-These two steps below, are identicals than the example above.
+Регуряное выражение для шага может быть задано через аргумент декоратора "@step",
+как строка документирования функции, описывающей шаг или как же просто имя описывающей функции.
+Ниже приведены два последних варианта.
 
 .. highlight:: python
 
@@ -451,18 +450,19 @@ These two steps below, are identicals than the example above.
 
 
 
-Steps can be grouped in class decorated with "@steps"
-======================================================
+Шаги можно сгруппировать в классе с декоратором "@steps"
+========================================================
 
 .. highlight:: python
 
 ::
 
+    # -*- coding: utf-8 -*-
     from lettuce import world, steps
 
     @steps
     class FactorialSteps(object):
-      """Methods in exclude or starting with _ will not be considered as step"""
+      """Методы  начинающиеся с _ или добавленные в список exclude не считаются шагами"""
 
       exclude = ['set_number', 'get_number']
 
@@ -491,9 +491,9 @@ Steps can be grouped in class decorated with "@steps"
           '''I see the number (\d+)'''
           self._assert_number_is(int(expected))
 
-    # Important!
-    # Steps are added only when you instanciate the "@steps" decorated class
-    # Internally decorator "@steps" build a closure with __init__
+    # Важно!
+    # Шаги будут добавлены только в том случае, если вы создали экзепляр класса, декорированного с помощью "@steps".
+    # Декоратор "@steps" создает обертку для метода __init__.
 
     FactorialSteps(world)
 
@@ -505,4 +505,4 @@ Steps can be grouped in class decorated with "@steps"
             return number*factorial(number-1)
 
 
-Have a nice lettuce...! ;)
+Приятного вам салата...! ;)
