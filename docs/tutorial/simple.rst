@@ -310,14 +310,15 @@ Python:
 
 Замечательно! Три сценария описаны и выполняются так как нам нужно.
 
-third round
+Третий этап
 ===========
 
-Let's provide more tests so our problem is better described and we get
-new errors so we'll be able to solve them.
+Давайте добавим еще несколько тестов, в которых вычисляется факториал
+еще для нескольких чисел. После запуска наши тесты снова не пройдут с
+первого раза и как всегда нам будет необходимо поправить код.
 
-[a] describe behaviour
-----------------------
+[a] Опишем поведение
+--------------------
 
 .. highlight:: ruby
 
@@ -353,13 +354,12 @@ new errors so we'll be able to solve them.
         When I compute its factorial
         Then I see the number 24
 
-[b] define steps in python
---------------------------
+[b] Описание шагов на Python-е
+------------------------------
 
-As we haven't changed the definition, no need to make changes on this
-step.
+Поскольку шаги у нас идентичные, в коде мы ничего менять не будем.
 
-[c] run and watch it fail
+[c] Запуcтим и увидим упавший тест
 -------------------------
 
 .. highlight:: bash
@@ -370,8 +370,11 @@ step.
 
 .. image:: ./screenshot5.png
 
-[d] write code to make it pass
-------------------------------
+[d] Исправим код
+----------------
+
+Давайте наконец исправим функцию ``factorial(number)`` таким образом,
+чтобы факториал вычислялся для всех чисел.
 
 .. highlight:: python
 
@@ -400,7 +403,7 @@ step.
         else:
             return number*factorial(number-1)
 
-[e] run again and watch it pass
+[e] Запуcтим и увидим что тест прошел
 -------------------------------
 
 .. highlight:: bash
@@ -411,17 +414,17 @@ step.
 
 .. image:: ./screenshot6.png
 
-forth round
-===========
+Четвертый этап
+==============
 
-All steps should be repeated as long as you can keep doing them - the
-quality of your software depends on these.
+Тестовые шаги следует повторять такое количество раз сколько нужно для обеспечения
+соответствующего качества тестируемой программы.
 
-****************
-Syntactic sugar
-****************
+********************
+Синтаксический сахар
+********************
 
-Available for versions > 0.2.19
+Доступно с версии 0.2.19
 
 Steps sentence can now be given by function name or doc.
 =========================================================
