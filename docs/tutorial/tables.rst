@@ -1,18 +1,16 @@
 .. _tutorial-tables:
 
-#########################
-handling data with tables
-#########################
+#################################
+Обработка данных с помощью таблиц
+#################################
 
-Let's imagine writing a MVC application. While writing the tests
-you will stumble in to a situation where there is a few models
-that must be added to the database, maybe you will also need to check
-the new state of those models.
+Давайте представим, что мы работаем над MVC приложением. Во время разработки
+очередного теста вы попадаете в ситуацию, когда в базу данных необходимо
+добавить несколько моделей, пр этом необходимо проверить несколько состояний
+для данных моделей, проще говоря добавить пару записей в БД.
 
-It means that as you write tests with lettuce, it can be very useful
-to handle data within steps.
-
-Step tables are here for you
+Lettuce имеет в своем арсенале оцень полезный инструемнт для обработки данных
+внтури шагов - таблицы данных.
 
 .. highlight:: ruby
 
@@ -44,10 +42,9 @@ Step tables are here for you
          | Ken      | $ 907.86    | no     |
          | Leonard  | $ 742.84    | no     |
 
-In the example above there are 4 steps, in which 3 contains tables.
+В приведенном выше примере 4 шага, в 3 шагах содержаться таблицы с тестовыми данными.
 
-Now let us imagine that we're using Django_ and write a step definition
-that uses the table.
+Давайте представим что мы используем Django_ и опишем шаги, использующие таблицы.
 
 .. highlight:: python
 
@@ -62,8 +59,7 @@ that uses the table.
               person = Student(**student_dict)
               person.save()
 
-What about handy functions for getting the first or the last row of
-the tables ?!
+Как на счет удобных функций для получения первой и последней строк таблицы?
 
 .. highlight:: python
 
@@ -81,14 +77,13 @@ the tables ?!
           person2.save()
 
 
-Easy, huh?!
+Легко, пожалуйста!
 
-Every step has a attribute called hashes which is a list of
-dicts. Each dict has represents table headers as keys and each table
-row as value.
+Каждый шаг имеет свойство hashes, содержащее список словарей.
+Каждый словарь явлеется записью из таблицы и содежит пары: заголовк столбца и значение.
 
-In other words, lettuce will translate the table written in the first
-step as this equivalent dict
+Другими словами, Lettuce преобразует таблицу, описанную в первом шаге,
+в список эквивалентных словарей.
 
 ::
 
